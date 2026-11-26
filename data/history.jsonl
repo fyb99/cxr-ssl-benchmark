@@ -11,3 +11,6 @@
 {"kind":"eval","model":"am-radio","task":"rsna_seg","ratio":10,"status":"running","at":"2026-11-26T13:36:02+08:00","source":"A6000 · GPU 5"}
 {"kind":"eval","model":"am-radio","task":"siim","ratio":1,"status":"done","score":65.382,"at":"2026-11-26T13:34:59+08:00","source":"A6000 · GPU 6 · Test Dice"}
 {"kind":"eval","model":"am-radio","task":"siim","ratio":10,"status":"running","at":"2026-11-26T13:36:02+08:00","source":"A6000 · GPU 6"}
+{"kind": "eval", "model": "am-radio", "task": "rsna_seg", "ratio": 10, "status": "done", "score": 76.736, "at": "2026-11-26T13:56:18+08:00", "source": "A6000 · Test Dice", "run": "20261126_132359_027293_baseline224_4gpu_b232_am_radio_recompute_20261125_180947"}
+{"kind": "eval", "model": "am-radio", "task": "siim", "ratio": 10, "status": "done", "score": 68.671, "at": "2026-11-26T14:07:49+08:00", "source": "A6000 · Test Dice", "run": "20261126_133502_033445_baseline224_4gpu_b232_am_radio_recompute_20261125_180947"}
+{"kind": "eval", "model": "am-radio", "task": "nih", "ratio": 1, "status": "done", "score": 78.522, "at": "2026-11-26T13:51:23+08:00", "source": "Vanda · PBS 1628232 · The average AUROC is", "run": "20261126_125512_706777_baseline224_4gpu_b232_am_radio_recompute_20261125_180947"}
