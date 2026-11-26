@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="胸片自监督预训练模型的下游结果与评测记录。">
+  <title>胸片模型评测台</title>
+  <style>/*__STYLE__*/</style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="shell mast-inner">
+      <a href="#top" class="brand">
+        <span class="mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M11 29V11h6c8 0 12 4 12 9s-4 9-12 9h-6Z" stroke="currentColor" stroke-width="2.5"/><path d="M16 20h12" stroke="currentColor" stroke-width="2.5"/><circle cx="31" cy="11" r="3" fill="currentColor"/></svg></span>
+        <span>胸片实验室<small>CXR RESEARCH</small></span>
+      </a>
+      <nav aria-label="页内导航"><a href="#results">结果对照</a><a href="#history">实验记录</a></nav>
+      <span class="mast-label">下游评测</span>
+    </div>
+  </header>
+  <main class="shell" id="top">
+    <section class="hero" aria-labelledby="title">
+      <div class="hero-content">
+        <div class="eyebrow"><span></span> 自监督预训练 · 胸片</div>
+        <h1 id="title">胸片模型评测台</h1>
+        <p>按训练数据比例比较分类与分割性能。每一档都独立从同一份预训练权重开始。</p>
+      </div>
+      <aside class="focus" aria-label="当前模型评测进度">
+        <span class="focus-label">本轮进度</span>
+        <div class="focus-main"><strong id="current-name">—</strong><span id="progress-count">—</span></div>
+        <div id="progress-bar" class="progress" aria-hidden="true"></div>
+        <p id="last-updated">正在读取记录</p>
+      </aside>
+    </section>
+    <section id="results" aria-labelledby="results-title">
+      <div class="section-top">
+        <div><div class="kicker">TEST RESULTS</div><h2 id="results-title">结果对照</h2></div>
+        <button type="button" class="export" id="export">导出 CSV</button>
+      </div>
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="训练数据比例">
+          <button type="button" data-ratio="all" aria-pressed="true">全部比例</button>
+          <button type="button" data-ratio="1" aria-pressed="false">1%</button>
+          <button type="button" data-ratio="10" aria-pressed="false">10%</button>
+          <button type="button" data-ratio="100" aria-pressed="false">100%</button>
+        </div>
+        <span class="legend"><i></i> ECAMP 固定为参考行 <span>·</span> 分数均以 % 表示</span>
+      </div>
+      <div id="boards"></div>
+      <p class="footnote">小字为相对 ECAMP 的百分点差。ECAMP 为截图中的论文参考值；AM-RADIO 只收录正式测试集结果。未跑和进行中的档位不计分。</p>
+    </section>
+    <section id="history" aria-labelledby="history-title">
+      <div class="section-top"><div><div class="kicker">RUN HISTORY</div><h2 id="history-title">实验记录</h2></div></div>
+      <div class="timeline-grid">
+        <div id="model-details" class="panel"></div>
+        <div class="panel"><h3>已记录的测试结果</h3><ol id="timeline"></ol></div>
+      </div>
+    </section>
+  </main>
+  <footer class="shell site-foot"><span>胸片实验室</span><span>实验记录按时间追加</span></footer>
+  <script type="application/json" id="benchmark-data">/*__DATA__*/</script>
+  <script>/*__APP__*/</script>
+</body>
+</html>
